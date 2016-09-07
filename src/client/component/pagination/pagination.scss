@@ -1,0 +1,14 @@
+.pageIcon {
+  cursor: pointer;
+  &:hover i{
+    color: #2db7f5;
+    font-weight: bold;
+  }
+  i {
+    font-size: 1.6rem;
+    transition: color 0.5s,font-weight 0.5s;
+    -moz-transition: color 0.5s,font-weight 0.5s;
+    -webkit-transition: color 0.5s,font-weight 0.5s;
+    -o-transition: color 0.5s,font-weight 0.5s;
+  }
+}

@@ -1,0 +1,15 @@
+.abstract {
+  height: 20rem;
+  padding: 2rem; }
+
+.abstract p, .abstract div {
+  color: #555;
+  text-align: justify;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.abstract h1, .abstract h2, .abstract h3, .abstract h4, .abstract h5, .abstract h6, .abstract p, .abstract ol, .abstract ul, .abstract li {
+  display: inline; }
+
+/*# sourceMappingURL=abstract.css.map */

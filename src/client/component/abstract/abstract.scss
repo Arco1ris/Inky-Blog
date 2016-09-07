@@ -1,0 +1,19 @@
+.abstract {
+    height: 20rem;
+    padding: 2rem;
+}
+  .abstract p,.abstract div{
+    color: #555;
+    //line-height: 1.7;
+    text-align: justify;
+    //margin: 0 0 25px 0;
+    height:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .abstract {
+    h1,h2,h3,h4,h5,h6,p,ol,ul,li{
+       display: inline;
+    }
+  }

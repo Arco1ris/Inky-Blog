@@ -1,0 +1,27 @@
+.content-box {
+  border-bottom: 0.1rem solid #dfe1e3; }
+  .content-box p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666666; }
+  .content-box a {
+    display: block;
+    padding: 1.5rem;
+    color: #242628; }
+
+.list {
+  display: flex;
+  flex-grow: 1; }
+  .list .article-list {
+    flex-basis: 12rem;
+    overflow: auto; }
+
+.page-buttons {
+  margin: 1rem; }
+  .page-buttons .page-button {
+    padding: 1rem;
+    cursor: pointer; }
+    .page-buttons .page-button:hover {
+      color: #57c5f7; }
+
+/*# sourceMappingURL=list.css.map */

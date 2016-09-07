@@ -1,0 +1,44 @@
+.view-container {
+  display: flex; }
+  .view-container .category-list {
+    flex-basis: 18rem;
+    text-align: left;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    line-height: 2rem;
+    border-right: 0.1rem solid #dfe1e3;
+    font-weight: 300; }
+    .view-container .category-list input {
+      width: 70%; }
+    .view-container .category-list .category-item {
+      margin: 0.4rem 0; }
+  .view-container .article-list {
+    flex-basis: 20%;
+    border-right: 0.1rem solid #dfe1e3; }
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 0.9rem 1.5rem;
+  border: #dfe1e3 1px solid;
+  background: #fff;
+  border-radius: 0.4rem;
+  color: #808284;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: none;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease; }
+  .btn a {
+    color: white; }
+
+.btn-green {
+  border-color: #667b32;
+  background: #859f41;
+  color: #fff; }
+
+/*# sourceMappingURL=category.css.map */

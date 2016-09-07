@@ -1,0 +1,35 @@
+.text {
+  padding: 2rem 0px; }
+
+.text p, .text div {
+  color: #555;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin: 0 0 2.5rem 0; }
+
+.text p:hover {
+  color: black; }
+
+pre {
+  display: block;
+  padding: 0.95rem;
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem; }
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0; }
+
+/*# sourceMappingURL=text.css.map */

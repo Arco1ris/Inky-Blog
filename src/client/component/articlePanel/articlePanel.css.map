@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAO;EACL,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,SAAS;EACjB,OAAO,EAAE,MAAM;EACf,QAAQ,EAAE,QAAQ;;AAGpB,UAAW;EACT,aAAa,EAAE,iBAAiB;EAChC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,YAAY;;AAGtB,IAAK;EACH,QAAQ,EAAE,QAAQ",
+"sources": ["articlePanel.scss"],
+"names": [],
+"file": "articlePanel.css"
+}

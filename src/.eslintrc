@@ -1,0 +1,26 @@
+{
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "rules": {
+    "no-alert": 2,
+    "indent": [
+      "error",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-param-reassign": [
+      "error",
+      {
+        "props": false
+      }
+    ]
+  },
+  "globals": {
+    "_": true
+  }
+}

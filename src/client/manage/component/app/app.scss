@@ -1,0 +1,55 @@
+// app
+.appContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  position: fixed;
+  .leftPanel {
+    border-right: 0.1rem solid #dfe1e3;
+    background: #f5f7f8;
+    height: 100%;
+    flex-basis:23.5rem;
+    ul{
+      margin: 5rem 0;
+      padding: 0 1.5rem 0 0;
+      list-style: none;
+      font-weight: 300;
+      text-align: left;
+      li {
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #242628;
+        transition: none;
+        a {
+          padding: 0.5rem 1rem 0.5rem 1.5rem;
+          border-radius: 0 0.4rem 0.4rem 0;
+          text-decoration: none;
+          width: 100%;
+          &:hover{
+            background: rgba(91, 164, 229, 0.15);
+          }
+          i{
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .rightPanel {
+    width: 10%;
+    flex-grow:1;
+     > div {
+      height:100%;
+    }
+    section {
+      height: 97%;
+    }
+  }
+}
+
+
+
+

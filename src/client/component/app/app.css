@@ -1,0 +1,19 @@
+.container {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 8rem auto; }
+  .container a:hover {
+    font-weight: bold; }
+
+.title {
+  font-size: 4.6rem;
+  line-height: 1.2em;
+  font-weight: 400;
+  padding-bottom: 1rem; }
+
+.page-divider {
+  border-bottom: 0.1rem solid #ddd;
+  width: 80%;
+  margin: 20px auto; }
+
+/*# sourceMappingURL=app.css.map */
