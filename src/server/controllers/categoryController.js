@@ -8,14 +8,13 @@ CategoryController = function () {}
 
 // add new category
 CategoryController.prototype.addCategory = function (req,res) {
-   if (isAdmin(req)) {
-       console.log(req.body);
-       CategoryService.insert(req.body,function (err,docs) {
-           res.send(returnJson(err,docs));
-       })
-   } else {
-       res.sendStatus(404);
-   }
+    if (isAdmin(req)) {
+        CategoryService.insert(req.body,function (err,docs) {
+            res.send(returnJson(err,docs));
+        })
+    } else {
+        res.sendStatus(404);
+    }
 }
 //PASS find all category
 CategoryController.prototype.findAll = function (req,res) {

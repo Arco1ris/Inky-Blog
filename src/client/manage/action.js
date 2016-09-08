@@ -93,11 +93,9 @@ export function articleCategory() {
                 type: GET_ARTICLES_CATEGORY,
                 result,
             });
-        }).catch((json, err) => {
-            console.log(json, err);
+        }).catch(() => {
             dispatch({
                 type: GET_ARTICLES_CATEGORY,
-                // result: {},
             });
         });
     };
@@ -118,7 +116,7 @@ export function articleTitle(actionId, categoryId, currentPage) {
     };
 }
 
-// GET one article 
+// GET one article
 export function getOneArticle(id) {
     return dispatch => {
         dispatch({
@@ -163,7 +161,7 @@ export function deleteOne(deleteOldArticle, categoryId) {
     };
 }
 
-// MOVE TO TRASH  
+// MOVE TO TRASH
 export function toTrash(articleId, categoryId) {
     return dispatch => {
         dispatch({

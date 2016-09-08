@@ -48,7 +48,6 @@ export class BaseForm extends React.Component {
         this.setState({ chooseSave: !this.state.chooseSave });
     }
     moveToTrash(articleId, categoryId) {
-        console.log(articleId, categoryId);
         if (articleId && categoryId) {
             this.props.toTrash(articleId, categoryId);
         }
@@ -80,45 +79,52 @@ export class BaseForm extends React.Component {
             <form className = 'base-form' onSubmit={this.props.submit}>
                 <header className="view-header">
                     <h3 className = 'view-title'>
+                        <input type="text" />
                         <input type="hidden" {...id} />
                         <input type="text" placeholder="Title" {...title}/>
                         {title.touched && title.error && <p className = 'err'>{title.error}</p>}
                     </h3>
                     <section className = 'view-action'>
                         <input type="hidden" placeholder="Time" {...time} />
-                        <button className = 'post-setting' onClick = {this.toggleSetting.bind(this)}>
+                        <button className = 'post-setting'
+                                onClick = {this.toggleSetting.bind(this)}>
                             <Icon type="setting"/>
                         </button>
-                        <section className = 'save-setting'>
+                        <section className='save-setting'>
                             {this.state.save ?
-                                <button className = "save-button" type = "submit" >save</button>
+                                <button className="save-button"
+                                        type="submit" >save</button>
                                 :
-                                <button className = "delete-button" type = "button" onClick = {this.moveToTrash.bind(this, id.value, category.value)}>delete</button>
-
+                                <button className="delete-button" type="button"
+                                        onClick={
+                                        this.moveToTrash.bind(this, id.value, category.value)
+                                        }>delete</button>
                             }
-                            <button className = 'choose-save' onClick = {this.chooseSave.bind(this)}>
+                            <button className='choose-save'
+                                    onClick={this.chooseSave.bind(this)}>
                                 <Icon type="down" />
                             </button>
                             {this.state.chooseSave ?
-                                <SmallPanel handleChange = {this.handleChange.bind(this)}/>
+                                <SmallPanel handleChange={this.handleChange.bind(this)}/>
                                 : null}
                         </section>
                     </section>
                 </header>
-                <section className = 'view-editor'>
-                    <section className = 'entry-markdown'>
-                        <textarea ref = 'contentOne' {...content}/>
-                        {content.touched && content.error && <p className = 'err'>{content.error}</p>}
+                <section className='view-editor'>
+                    <section className='entry-markdown'>
+                        <textarea ref='contentOne' {...content}/>
+                        {content.touched && content.error && <p className='err'>{content.error}</p>}
                     </section>
                     <section className="entry-preview">
-                        <section ref = 'contentTwo' dangerouslySetInnerHTML={this.rawMarkup()}></section>
+                        <section ref='contentTwo'
+                                 dangerouslySetInnerHTML={this.rawMarkup()}></section>
                     </section>
                 </section>
-                <section ref = 'findNode' className = 'form-side-panel'>
-                    <SidePanel toggleSetting = {this.toggleSetting.bind(this)}
-                               category = {category}
-                               categories = {categories}
-                               changeCategory = {this.changeCategory.bind(this)}
+                <section ref='findNode' className='form-side-panel'>
+                    <SidePanel toggleSetting={this.toggleSetting.bind(this)}
+                               category={category}
+                               categories={categories}
+                               changeCategory={this.changeCategory.bind(this)}
                     />
                 </section>
             </form>
@@ -131,7 +137,7 @@ export class BaseForm extends React.Component {
 BaseForm.propTypes = {
     id: React.PropTypes.object,
     title: React.PropTypes.object,
-    time: React.PropTypes.object,
+    time: React.PropTypes.string,
     content: React.PropTypes.object,
     category: React.PropTypes.object,
     categories: React.PropTypes.object,

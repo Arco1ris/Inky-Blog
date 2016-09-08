@@ -30,7 +30,7 @@ export class LoginForm extends React.Component {
                 pwError: '',
             },
             confirm: '',
-        }
+        };
         this.userNameChange = this.userNameChange.bind(this);
         this.passwordChange = this.passwordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,15 +39,13 @@ export class LoginForm extends React.Component {
         e.preventDefault();
         const userName = this.state.userName.trim();
         const password = this.state.password.trim();
-        const values = { userName, password }
+        const values = { userName, password };
         if (!validate(values).password && !validate(values).userName) {
             postUser(userName, sha1(password)).then((result) => {
-                console.log(result);
                 if (result.code === 0) {
                     if (result.data.validate === false) {
                         this.setState({ confirm: result.data.msg });
                     } else {
-                        console.log('登陆成功');
                         window.location.href = result.data.path;
                     }
                 } else {

@@ -28,7 +28,7 @@ function mapDispatchToProps(dispatch) {
 }
 const active = {
     borderLeft: '#5ba4e5 2px solid',
-}
+};
 
 class List extends React.Component {
     onClick(id) {
@@ -47,7 +47,7 @@ class List extends React.Component {
             const endPage = Math.ceil(total / limit);
             if (actionId === 1 && currentPage >= 2) {
                 currentPage -= 1;
-            } else if(actionId === 2 && currentPage < endPage) {
+            } else if (actionId === 2 && currentPage < endPage) {
                 currentPage += 1;
             }
             this.props.articleTitle(actionId, categoryId, currentPage);
@@ -55,7 +55,7 @@ class List extends React.Component {
     }
     render() {
         const listId = this.props.params.list;
-        if (!this.props.titles) {
+        if (Object.keys(this.props.titles).length === 0) {
             return null;
         }
         let ListNodes = [];
@@ -69,7 +69,8 @@ class List extends React.Component {
                 const formattedDate = myTime.format('YYYY-MM-DD hh:mm:ss a');
                 return (
                     <div key = {key} className = 'content-box'>
-                        <Link to={ url } activeStyle={active} onClick={this.onClick.bind(this, item.id)}>
+                        <Link to={ url } activeStyle={active}
+                              onClick={this.onClick.bind(this, item.id)}>
                             {item.title}
                             <p>{formattedDate}</p>
                         </Link>
@@ -82,8 +83,10 @@ class List extends React.Component {
                 <section className = "article-list">
                     { ListNodes }
                     <div className = "page-buttons">
-                        <Icon className = "page-button" type="left" onClick={this.pageBreak.bind(this, 1, listId)}/>
-                        <Icon className = "page-button" type="right" onClick={this.pageBreak.bind(this, 2, listId)}/>
+                        <Icon className = "page-button" type="left"
+                              onClick={this.pageBreak.bind(this, 1, listId)}/>
+                        <Icon className = "page-button" type="right"
+                              onClick={this.pageBreak.bind(this, 2, listId)}/>
                     </div>
                 </section>
                 { this.props.children }
@@ -102,6 +105,7 @@ List.propTypes = {
     getOneArticle: React.PropTypes.func,
     beFalse: React.PropTypes.func,
     category: React.PropTypes.object,
+    children: React.PropTypes.object,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);

@@ -16,30 +16,45 @@ import {
 } from './constants';
 
 const initialState = {
-    // articles: null,
+    articles: {},
+    category: {},
+    titles: {},
+    oneArticle: {},
 };
 
 export function articleReducer(state = initialState, action) {
     switch (action.type) {
         case GETING_ARTICLES:
+            return {
+                ...state,
+            };
         case GET_ARTICLES:
             return {
                 ...state,
                 articles: action.result,
             };
         case GETING_ARTICLES_CATEGORY:
+            return {
+                ...state,
+            };
         case GET_ARTICLES_CATEGORY:
             return {
                 ...state,
                 category: action.result,
             };
         case GETING_ARTICLES_TITLE:
+            return {
+                ...state,
+            };
         case GET_ARTICLES_TITLE:
             return {
                 ...state,
                 titles: action.result,
             };
         case GETING_ONE_ARTICLE:
+            return {
+                ...state,
+            };
         case GET_ONE_ARTICLE:
             return {
                 ...state,

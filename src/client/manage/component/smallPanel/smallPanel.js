@@ -9,11 +9,11 @@ export class SmallPanel extends React.Component {
         this.props.handleChange(value);
     }
     render() {
-        console.log(this.props);
         return (
             <div className = "small-panel">
                 <p>Save or Delete</p>
-                <Select defaultValue="提交方式" style={{ width: 102 }} onChange={this.handleChange.bind(this)}>
+                <Select defaultValue="提交方式" style={{ width: 102 }}
+                        onChange={this.handleChange.bind(this)}>
                     <Option value="save">save</Option>
                     <Option value="delete">delete</Option>
                 </Select>

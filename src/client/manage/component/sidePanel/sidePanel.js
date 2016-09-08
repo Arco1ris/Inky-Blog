@@ -34,7 +34,8 @@ export class SidePanel extends React.Component {
                     <select className = "panel-select" {...category} value={category.value || ''}>
                         {select}
                     </select>
-                    {category.touched && category.error && <p className = 'err'>{category.error}</p>}
+                    {category.touched && category.error &&
+                    <p className = 'err'>{category.error}</p>}
                 </div>
             </div>
         );

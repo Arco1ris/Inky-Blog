@@ -55,6 +55,7 @@ class NewPost extends React.Component {
 NewPost.propTypes = {
     id: React.PropTypes.string,
     oneArticle: React.PropTypes.object,
+    params: React.PropTypes.object,
     category: React.PropTypes.object,
     beFalse: React.PropTypes.func,
     addNew: React.PropTypes.bool,

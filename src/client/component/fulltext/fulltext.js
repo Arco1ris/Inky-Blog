@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as InkyBackActions from './../../action';
 
-import { Row, Col, Card, Button } from 'antd';
+import { Row, Col, Button } from 'antd';
 import { Subhead } from './../subhead/subhead';
 import { ArticleTitle } from './../articleTitle/articleTitle';
 import { Text } from './../text/text';
@@ -31,7 +31,7 @@ function mapDispatchToProps(dispatch) {
 
 class FullText extends React.Component {
     render() {
-        if (!this.props.oneArticle) {
+        if (Object.keys(this.props.oneArticle).length === 0) {
             return null;
         }
         const oneArticle = this.props.oneArticle.data;

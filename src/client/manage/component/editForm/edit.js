@@ -25,7 +25,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const validate = values => {
-    const errors = {}
+    const errors = {};
     if (!values.title) {
         errors.title = '必填';
     } else if (values.title.length > 15) {
@@ -40,7 +40,7 @@ const validate = values => {
         errors.category = '必选';
     }
     return errors;
-}
+};
 
 class EditForm extends React.Component {
     componentWillMount() {
@@ -50,15 +50,14 @@ class EditForm extends React.Component {
         this.props.beFalse();
     }
     handleSubmit(form) {
-        console.log(form);
-        const { action, updateList } = this.props;
+        const { action } = this.props;
         const time = Date.now() / 1000 | 0;
         const baseArticle = {
             title: form.title,
             category: form.category,
             content: form.content,
-        }
-        let doAction = function () {};
+        };
+        let doAction = null;
         if (action === 'postOne') {
             doAction = this.props.postOne;
         } else {
@@ -68,7 +67,6 @@ class EditForm extends React.Component {
             const createdTime = { createdTime: time };
             const newArticle = Object.assign({}, createdTime, baseArticle);
             doAction(newArticle);
-            
         } else {
             const oldId = { articleId: form.id };
             const updateOldArticle = Object.assign({}, oldId, baseArticle);
@@ -76,8 +74,8 @@ class EditForm extends React.Component {
         }
         this.props.beFalse();
     }
-    componentWillUpdate(nextProps, nextState) {
-        if (this.props.result === undefined && nextProps.result) {
+    componentWillUpdate(nextProps) {
+        if (this.props.result === '' && nextProps.result) {
             message.success('操作成功');
         }
     }
@@ -85,7 +83,6 @@ class EditForm extends React.Component {
         const { fields: { id, title, category, time, content }, handleSubmit } = this.props;
         const myTime = moment(time.value * 1000);
         const formattedDate = myTime.format('YYYY-MM-DD hh:mm:ss');
-
         // 这里需要修改文章类型对应的 ID
         const allCategory = this.props.category;
         if (!allCategory) {
@@ -100,14 +97,15 @@ class EditForm extends React.Component {
                 </option>);
             }
         }
+        console.log(id);
         return (
-                <BaseForm id = {id} title = {title} category = {category}
-                          time = {formattedDate} content = {content} categories = {allCategory}
-                          submit = {handleSubmit(this.handleSubmit.bind(this))}
-                          toTrash = {this.props.toTrash}
-                          beFalse = {this.props.beFalse}
-                />
-        );      
+            <BaseForm id={id} title={title} category={category}
+                      time={formattedDate} content={content} categories={allCategory}
+                      submit={handleSubmit(this.handleSubmit.bind(this))}
+                      toTrash={this.props.toTrash}
+                      beFalse={this.props.beFalse}
+            />
+        );
     }
 }
 
@@ -124,6 +122,10 @@ EditForm.propTypes = {
     updateList: React.PropTypes.func,
     toTrash: React.PropTypes.func,
     category: React.PropTypes.object,
+    articleCategory: React.PropTypes.func,
+    postOne: React.PropTypes.func,
+    updateOne: React.PropTypes.func,
+    result: React.PropTypes.string,
 };
 const fields = ['id', 'title', 'category', 'time', 'content'];
 const form = reduxForm({ form: 'EditForm', fields, validate });

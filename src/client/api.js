@@ -33,7 +33,6 @@ export function get(url) {
 }
 
 function update(method, url, data) {
-    console.log(data);
     return new Promise((resolve, reject) => {
         const promise = fetch(url, {
             method,
@@ -64,7 +63,7 @@ function deleteData(url, data) {
 }
 
 export function deleteArticle(articleId, categoryId) {
-    const deleteDate = { articleId, categoryId }
+    const deleteDate = { articleId, categoryId };
     return deleteData('/api/articles', JSON.stringify(deleteDate));
 }
 
@@ -108,7 +107,7 @@ export function postCategory(newCategory) {
 }
 
 export function moveToTrash(articleId, categoryId) {
-    const delData = { articleId, categoryId }
+    const delData = { articleId, categoryId };
     return put('/api/category/article', JSON.stringify(delData));
 }
 
@@ -118,6 +117,6 @@ export function deleteCategory(categoryId) {
 
 // 用户登陆
 export function postUser(userName, password) {
-    const User = { userName, password }
+    const User = { userName, password };
     return post('/api/user', JSON.stringify(User));
-};
+}

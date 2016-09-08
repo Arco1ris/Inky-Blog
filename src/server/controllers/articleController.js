@@ -17,6 +17,7 @@ ArticleController.prototype.findAll = function (req,res) {
         currentPage = req.params.currentPage;
     }
     ArticleService.findAll(currentPage,function (err,docs) {
+        console.log(docs);
         res.send(returnJson(err,docs));
     })
 }

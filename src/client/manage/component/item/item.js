@@ -24,7 +24,7 @@ function mapDispatchToProps(dispatch) {
 
 class Item extends React.Component {
     render() {
-        if (!this.props.oneArticle) {
+        if (Object.keys(this.props.oneArticle).length === 0) {
             return null;
         }
         const oneArticle = this.props.oneArticle;
@@ -37,7 +37,7 @@ class Item extends React.Component {
                     id: oneArticle.data._id,
                     title: oneArticle.data.title,
                     category: oneArticle.data.category,
-                    time: formattedDate, 
+                    time: formattedDate,
                     content: oneArticle.data.content },
             };
         }

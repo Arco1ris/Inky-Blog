@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import thunk from 'redux-thunk';
-
 import { Router, Route, browserHistory, IndexRedirect } from 'react-router';
 import { Provider } from 'react-redux';
 import InkyReducers from './reducer';
@@ -11,11 +10,8 @@ import FullText from './component/fulltext/fulltext';
 import { App } from './component/app/app';
 import { About } from './component/about/about';
 import { Archives } from './component/archive/archive';
-
 import 'antd/dist/antd.css';
 import './css/default.scss';
-
-import { Icon } from 'antd';
 
 export const store = applyMiddleware(thunk)(createStore)(InkyReducers);
 

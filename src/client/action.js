@@ -45,11 +45,9 @@ export function articleCategory() {
                 type: GET_ARTICLES_CATEGORY,
                 result,
             });
-        }).catch((json, err) => {
-            console.log(err);
+        }).catch(() => {
             dispatch({
                 type: GET_ARTICLES_CATEGORY,
-                result: {},
             });
         });
     };

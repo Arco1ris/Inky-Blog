@@ -27,26 +27,25 @@ function mapDispatchToProps(dispatch) {
 
 class AllArticles extends React.Component {
     componentWillMount() {
-        if (!this.props.articles) {
+        if (Object.keys(this.props.articles).length === 0) {
             this.props.article(1);
         }
     }
     render() {
-        if (!this.props.articles) {
+        if (Object.keys(this.props.articles).length === 0) {
             return null;
         }
         let listNodes = [];
         if (this.props.articles) {
             const ab = ['a', 'b', 'c', 'd', 'e'];
             const articles = this.props.articles.data.docs;
-            listNodes = articles.map((item, key) => {
-                return (
+            listNodes = articles.map((item, key) => (
                     <div key = { ab[key] } >
                         <ArticlePanel showFull = {this.props.getOneArticle}
                                       item = {item} key = {key}/>
                     </div>
-                );
-            });
+                )
+            );
         }
         return (
             <div className = "articles">

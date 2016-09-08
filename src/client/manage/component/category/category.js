@@ -56,7 +56,8 @@ class Category extends React.Component {
         this.props.deleteOneCategory(theCategoryId);
     }
     render() {
-        if (!this.props.category) {
+        console.log(this.props.category);
+        if (Object.keys(this.props.category).length === 0) {
             return null;
         }
         let ListNodes = null;

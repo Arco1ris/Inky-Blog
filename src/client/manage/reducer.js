@@ -28,67 +28,100 @@ import {
 } from '../constants';
 
 const initialState = {
-    // articles: null,
+    result: '',
+    articles: {},
+    category: {},
+    titles: {},
+    oneArticle: {},
 };
 
 export function articleReducer(state = initialState, action) {
-    console.log(action.result);
     switch (action.type) {
         case POSTING_ARTICLE:
+            return {
+                ...state,
+            };
         case POST_ARTICLE:
             return {
                 ...state,
                 result: action.result,
             };
         case GETING_ARTICLES:
+            return {
+                ...state,
+            };
         case GET_ARTICLES:
             return {
                 ...state,
                 articles: action.result,
             };
         case GETING_ARTICLES_CATEGORY:
+            return {
+                ...state,
+            };
         case GET_ARTICLES_CATEGORY:
             return {
                 ...state,
                 category: action.result,
             };
         case GETING_ARTICLES_TITLE:
+            return {
+                ...state,
+            };
         case GET_ARTICLES_TITLE:
             return {
                 ...state,
                 titles: action.result,
             };
         case GETING_ONE_ARTICLE:
+            return {
+                ...state,
+            };
         case GET_ONE_ARTICLE:
             return {
                 ...state,
                 oneArticle: action.result,
             };
         case PUTING_ARTICLE:
+            return {
+                ...state,
+            };
         case PUT_ARTICLE:
             return {
                 ...state,
                 result: action.result,
             };
         case DELETING_ARTICLE:
+            return {
+                ...state,
+            };
         case DELETE_ARTICLE:
             return {
                 ...state,
                 result: action.result,
             };
         case POSTING_CATEGORY:
+            return {
+                ...state,
+            };
         case POST_CATEGORY:
             return {
                 ...state,
                 result: action.result,
             };
         case MOVING_TO_TRASH:
+            return {
+                ...state,
+            };
         case MOVE_TO_TRASH:
             return {
                 ...state,
                 result: action.result,
             };
         case DELETING_CATEGORY:
+            return {
+                ...state,
+            };
         case DELETE_CATEGORY:
             return {
                 ...state,

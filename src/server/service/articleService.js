@@ -15,29 +15,24 @@ ArticleService = function(){};
 ArticleService.prototype.findAll = function(currentPage,callback) {
     Article.find({}, function (err, docs) {
         if (!err) {
-        if (docs.length !== 0){
-            var pageNumber = 1;
-            var nPerPage = 3;
-            if(currentPage){
-                pageNumber = Number(currentPage);
+            if (docs.length !== 0){
+                var pageNumber = 1;
+                var nPerPage = 3;
+                if(currentPage){
+                    pageNumber = Number(currentPage);
+                }
+                var sort = { createdTime: -1 };
+                ArticlePagination(null, sort, pageNumber, nPerPage, Article, function (err,docs) {
+                    docs.result = 1;
+                    callback(err,docs);
+                });
+    
+            } else {
+                var result = {result:0,docs:docs,total:0,page:1};
+                callback(err,result);
             }
-            var sort = { createdTime: -1 };
-            ArticlePagination(null, sort, pageNumber, nPerPage, Article, function (err,docs) {
-                // 这里主要是返回需要的部分内容
-                // docs.docs = docs.docs.map(function (item,key) {
-                //     return {title:item.title,createdTime:item.createdTime,category:item.category,id:item.id}
-                // })
-                docs.result = 1;
-                callback(err,docs);
-            });
-
-        } else {
-            var result = {result:0,docs:docs,total:0,page:1};
-            callback(err,result);
-        }
         }
     });
-    // 这里无法 return 任何值因为 可能异步查询还未结束,而 return 早就执行了,所以这边用 callback 替代了
 };
 
 //PASS find article by id
